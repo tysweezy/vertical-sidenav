@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Horizontal Nav -- dropdown</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+
+<div class="wrapper">
+
+<div class="sidenav">
+<ul>
+	<li><a class="parent" href="#">Dashboard</a>
+
+		<ul class="submenu">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Analytics</a></li>
+			<li><a href="#">Edit</a></li>
+		</ul>
+
+	</li>
+	
+
+	<li><a class="parent" href="#">Data</a>
+		<ul class="submenu">
+			<li><a href="#">Percentage</a></li>
+			<li><a href="#">Groups</a></li>
+			<li><a href="#">Charts</a></li>
+		</ul>
+		
+	</li>
+	
+	<li><a class="parent" href="#">Bookmarks</a>
+		<ul class="submenu">
+			<li><a href="#">Links</a></li>
+			<li><a href="#">Board</a></li>
+			<li><a href="#">Save</a></li>
+		</ul>
+
+	</li>
+</ul>
+
+
+</div><!--/sidenav-->
+
+</div><!--/wrapper-->
+	
+
+<!--scripts-->
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+	$('.parent').click(function(event) {
+		event.preventDefault();
+
+
+	$("ul.submenu").hide().slideUp();
+
+		$('li').removeClass('active');
+
+		
+		
+		$(this).parent().addClass('active');
+
+		
+		$(this).parent().children("ul").slideToggle("slow");
+
+	});
+
+});
+</script>
+</body>
+</html>

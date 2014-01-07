@@ -1,0 +1,100 @@
+/***color variables***/
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #f8f8f8;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+}
+.sidenav {
+  width: 190px;
+  background: #c1d72e;
+  height: 100%;
+  position: absolute;
+}
+.sidenav ul li {
+  /*padding: 4px;*/
+
+  font-size: .9em;
+  margin-left: 10px;
+  list-style: none;
+}
+.sidenav a {
+  padding: 10px 0 10px 10px;
+  color: #f8f8f8;
+  display: block;
+  width: 100%;
+  margin-left: -10px;
+  transition: background 0.25s ease-in-out;
+  -webkit-transition: background 0.25s ease-in-out;
+  -moz-transition: background 0.25s ease-in-out;
+  -o-transition: background 0.25s ease-in-out;
+  -ms-transition: background 0.25s ease-in-out;
+}
+.sidenav a:hover {
+  background: #9daf25;
+  color: #f8f8f8;
+}
+.submenu {
+  display: none;
+  background: #6e7c26;
+  border-top: 2px solid #697519;
+  border-bottom: 2px solid #697519;
+  /*width: 100%;*/
+
+  margin-left: -10px;
+  padding: 0 7px;
+}
+.submenu ul li {
+  margin: 0;
+}
+.submenu a {
+  color: #f8f8f8;
+  background: none !important;
+  padding-left: 25px;
+  transition: color 0.25s ease-in-out;
+  -webkit-transition: color 0.25s ease-in-out;
+  -moz-transition: color 0.25s ease-in-out;
+  -o-transition: color 0.25s ease-in-out;
+  -ms-transition: color 0.25s ease-in-out;
+}
+.submenu a:hover {
+  color: #9daf25;
+  background: none;
+}
+/***active state***/
+.active {
+  position: relative;
+}
+.active a {
+  background: #9daf25;
+}
+/***arrow on active***/
+li.active:after {
+  content: ' ';
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: 6%;
+  left: 177px;
+  border: 10px solid;
+  border-color: #f8f8f8 transparent transparent #f8f8f8;
+  -webkit-transform: rotate(-45deg);
+  /* Saf3.1+, Chrome */
+
+  -moz-transform: rotate(-45deg);
+  /* FF3.5+ */
+
+  -ms-transform: rotate(-45deg);
+  /* IE9 */
+
+  -o-transform: rotate(-45deg);
+  /* Opera 10.5 */
+
+  transform: rotate(-45deg);
+}
