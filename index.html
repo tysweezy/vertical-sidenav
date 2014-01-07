@@ -4,6 +4,9 @@
 	<meta charset="UTF-8">
 	<title>Horizontal Nav -- dropdown</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'/>
+	<link rel="stylesheet" type="text/css" href="css/icomoon.css"/>
+
 </head>
 <body>
 
@@ -11,7 +14,7 @@
 
 <div class="sidenav">
 <ul>
-	<li><a class="parent" href="#">Dashboard</a>
+	<li><a class="parent" href="#"><i class="icon-meter"></i>Dashboard</a>
 
 		<ul class="submenu">
 			<li><a href="#">Home</a></li>
@@ -22,7 +25,7 @@
 	</li>
 	
 
-	<li><a class="parent" href="#">Data</a>
+	<li><a class="parent" href="#"><i class="icon-stats"></i>Data</a>
 		<ul class="submenu">
 			<li><a href="#">Percentage</a></li>
 			<li><a href="#">Groups</a></li>
@@ -31,7 +34,7 @@
 		
 	</li>
 	
-	<li><a class="parent" href="#">Bookmarks</a>
+	<li><a class="parent" href="#"><i class="icon-book"></i>Bookmarks</a>
 		<ul class="submenu">
 			<li><a href="#">Links</a></li>
 			<li><a href="#">Board</a></li>
@@ -39,36 +42,54 @@
 		</ul>
 
 	</li>
+	
+	<li id="collapse-menu"><a id="collapse" href="#"><i class="icon-arrow-left3"></i>Collapse Menu</a></li>
 </ul>
 
 
+
+
 </div><!--/sidenav-->
+
+
+<div class="sidenav-collapsed">
+	<ul>
+		<li><a href="#"><i class="icon-meter"></i></a></li>
+		<li><a href="#"><i class="icon-stats"></i></a></li>
+		<li><a href="#"><i class="icon-book"></i></a></li>
+
+		<li id="expand-menu"><a href="#"><i class="icon-arrow-right2"></i></a></li>
+	</ul>
+</div><!--/sidenav-collapsed-->
 
 </div><!--/wrapper-->
 	
 
 <!--scripts-->
 <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 
 	$('.parent').click(function(event) {
 		event.preventDefault();
-
-
-	$("ul.submenu").hide().slideUp();
-
+		$("ul.submenu").hide().slideUp();
 		$('li').removeClass('active');
-
-		
-		
 		$(this).parent().addClass('active');
-
-		
 		$(this).parent().children("ul").slideToggle("slow");
-
 	});
 
+	/***collapse menu***/
+	$('#collapse').click(function() {
+		$('.sidenav').hide('slide', {direction: 'left'}, 500);
+		$('.sidenav-collapsed').show();
+	});
+
+	/***expand menu***/
+	$('#expand-menu').click(function() {
+		$('.sidenav-collapsed').hide();
+		$('.sidenav').show('slide', {direction: 'left'}, 500);
+	})
 });
 </script>
 </body>

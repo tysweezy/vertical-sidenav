@@ -7,9 +7,13 @@ body {
   background: #f8f8f8;
   font-family: Arial, sans-serif;
   font-weight: bold;
+  font-family: 'Oswald', sans-serif;
 }
 a {
   text-decoration: none;
+}
+i {
+  padding-right: 5px;
 }
 .sidenav {
   width: 190px;
@@ -97,4 +101,38 @@ li.active:after {
   /* Opera 10.5 */
 
   transform: rotate(-45deg);
+}
+li#collapse-menu {
+  margin-top: 20px;
+}
+li#collapse-menu a:hover {
+  background: none !important;
+  color: #9daf25;
+}
+/***collapsed sidenav**/
+.sidenav-collapsed {
+  display: none;
+  width: 37px;
+  position: absolute;
+  height: 100%;
+  background: #c1d72e;
+}
+.sidenav-collapsed ul li {
+  list-style: none;
+  /*margin-left: 10px;*/
+
+  margin: 10px 0 0;
+}
+.sidenav-collapsed a {
+  color: #f8f8f8;
+  /*padding: 8px;*/
+
+  padding: 1px 6px 1px 5px;
+  font-size: 1.3em;
+}
+.sidenav-collapsed a:hover {
+  background: #9daf25;
+}
+#expand-menu {
+  margin-top: 25px;
 }

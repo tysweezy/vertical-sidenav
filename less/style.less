@@ -14,11 +14,16 @@ body {
 	background: @white;
 	font-family: Arial, sans-serif;
 	font-weight: bold;
+	font-family: 'Oswald', sans-serif;
 }
 
 a {
 
 	text-decoration: none;
+}
+
+i {
+	padding-right: 5px;
 }
 
 .sidenav {
@@ -116,4 +121,42 @@ li.active:after {
     -ms-transform: rotate(-45deg);  /* IE9 */
     -o-transform: rotate(-45deg);  /* Opera 10.5 */
     transform: rotate(-45deg);
+}
+
+li#collapse-menu {margin-top: 20px;}
+
+li#collapse-menu a:hover {
+	background: none !important;
+	color: @hoverstate;
+}
+
+/***collapsed sidenav**/
+.sidenav-collapsed {
+	display: none;
+	width: 37px;
+	position:absolute;
+	height: 100%;
+	background: @sidenav;
+
+
+	ul li {
+		list-style:none;
+		/*margin-left: 10px;*/
+		margin: 10px 0 0;
+	}
+
+	a {
+		color: @white;
+		/*padding: 8px;*/
+		padding: 1px 6px 1px 5px;
+		font-size: 1.3em;
+	}
+
+	a:hover {
+		background: @hoverstate;
+	}
+}
+
+#expand-menu {
+	margin-top: 25px;
 }
