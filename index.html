@@ -54,9 +54,27 @@
 
 <div class="sidenav-collapsed">
 	<ul>
-		<li><a href="#"><i class="icon-meter"></i></a></li>
-		<li><a href="#"><i class="icon-stats"></i></a></li>
-		<li><a href="#"><i class="icon-book"></i></a></li>
+		<li><a class="collapsed-parent" href="#"><i class="icon-meter"></i></a>
+			<ul class="collapsed-submenu">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Analytics</a></li>
+				<li><a href="#">Edit</a></li>
+			</ul>
+		</li>
+		<li><a class="collapsed-parent" href="#"><i class="icon-stats"></i></a>
+			<ul class="collapsed-submenu">
+				<li><a href="#">Percentage</a></li>
+				<li><a href="#">Groups</a></li>
+				<li><a href="#">Charts</a></li>
+			</ul>
+		</li>
+		<li><a class="collapsed-parent" href="#"><i class="icon-book"></i></a>
+			<ul class="collapsed-submenu">
+				<li><a href="#">Links</a></li>
+				<li><a href="#">Board</a></li>
+				<li><a href="#">Save</a></li>
+			</ul>
+		</li>
 
 		<li id="expand-menu"><a href="#"><i class="icon-arrow-right2"></i></a></li>
 	</ul>
@@ -81,8 +99,22 @@ $(document).ready(function() {
 
 	/***collapse menu***/
 	$('#collapse').click(function() {
+		
 		$('.sidenav').hide('slide', {direction: 'left'}, 500);
 		$('.sidenav-collapsed').show();
+	
+	});
+
+	$('.collapsed-parent').click(function(event) {
+		event.preventDefault();
+
+
+		$("ul.collapsed-submenu").hide().fadeOut();
+		$('li').removeClass('active');
+		$(this).parent().addClass('active');
+		$(this).parent().addClass('hidden');
+		$(this).parent().children("ul").fadeIn("slow");
+
 	});
 
 	/***expand menu***/

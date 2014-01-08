@@ -1,0 +1,16 @@
+﻿Revert "changes to index file"
+
+This reverts commit 024cd0087acd22cb7c75c470ee533fe1f926b5e1.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# You are currently rebasing branch 'master' on '85ddd84'.
+#   (all conflicts fixed: run "git rebase --continue")
+#
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   index.html
+#
+

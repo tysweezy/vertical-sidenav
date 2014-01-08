@@ -123,6 +123,10 @@ li.active:after {
     transform: rotate(-45deg);
 }
 
+li.active.hidden:after {
+	display: none;
+}
+
 li#collapse-menu {margin-top: 20px;}
 
 li#collapse-menu a:hover {
@@ -140,9 +144,9 @@ li#collapse-menu a:hover {
 
 
 	ul li {
-		list-style:none;
+		list-style:none; 
 		/*margin-left: 10px;*/
-		margin: 10px 0 0;
+		margin: 10px 0 0; 
 	}
 
 	a {
@@ -159,4 +163,45 @@ li#collapse-menu a:hover {
 
 #expand-menu {
 	margin-top: 25px;
+}
+
+.collapsed-submenu {
+	display: none;
+	background: @submenu;
+	position: absolute;
+	width: 200px;
+	height: auto;
+	left: 37px;
+	top: -1px;
+	/*padding: 0 0 10px 10px;*/
+
+	a {
+		
+		color: @white;
+		font-size: 0.9em;
+		background: none !important;
+
+	}
+
+	a:hover {
+		background: none !important;
+		color: @hoverstate;
+	}
+}
+
+
+.collapsed-submenu:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: 7px;
+	left: -5px;
+	border: 10px solid;
+	border-color: @submenu transparent transparent @submenu;
+	-webkit-transform: rotate(-45deg);  /* Saf3.1+, Chrome */
+    -moz-transform: rotate(-45deg);  /* FF3.5+ */
+    -ms-transform: rotate(-45deg);  /* IE9 */
+    -o-transform: rotate(-45deg);  /* Opera 10.5 */
+    transform: rotate(-45deg);
 }
